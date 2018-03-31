@@ -7,6 +7,7 @@ A simple ES6 Library starter kit.
 - **Rollup** and **Babel** transform code
 - **Eslint** with Airbnb to lint code
 - **Jest** for writing tests
+- Run lint and tests before each commit with **husky**
 
 ## Avaiable `yarn`|`npm` commands
 
@@ -15,6 +16,7 @@ A simple ES6 Library starter kit.
   "start": "npm run test -- --watch",
   "test": "jest",
   "lint": "eslint .",
-  "build": "npm lint && npm test && rollup -c"
+  "clean": "rimraf lib",
+  "build": "npm run clean && npm run lint && npm run test && rollup -c"
 }
 ```
