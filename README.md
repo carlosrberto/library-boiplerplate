@@ -8,7 +8,7 @@ A simple ES6 Library starter kit.
 - **Eslint** with Airbnb to lint code
 - **Jest** for writing tests
 
-## Avaiable commands `yarn`|`npm` commands
+## Avaiable `yarn`|`npm` commands
 
 ```json
 {
