@@ -15,14 +15,21 @@
     "regenerator-runtime": "^0.11.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.57.1",
-    "rollup-plugin-babel": "^3.0.3"
+    "rollup-plugin-babel": "^3.0.3",
+    "static-server": "^2.2.0"
   },
   "scripts": {
     "start": "npm run test -- --watch",
     "test": "jest",
+    "cov": "jest --coverage",
+    "cov:serve": "npm run cov && static-server .coverage/lcov-report --port 3000 --no-nocache",
+    "cov:publish": "cat ./.coverage/lcov.info | coveralls",
     "lint": "eslint .",
     "clean": "rimraf lib",
     "build": "npm run clean && npm run lint && npm run test && rollup -c",
     "precommit": "npm run lint && npm run test"
+  },
+  "dependencies": {
+    "coveralls": "^3.0.0"
   }
 }
